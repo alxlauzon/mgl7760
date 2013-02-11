@@ -27,7 +27,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
   
   public function testFailure()
   {
-    $this->assertTrue(true, 'This test need to fail');
+    $this->assertTrue(false, 'This test need to fail');
   }
 }
 
