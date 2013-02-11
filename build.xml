@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="base" default="build">
+  <target name="build">
+    <exec executable="php">
+      <arg value="composer.phar" />
+	  	<arg value="install" />
+	  </exec>
+  </target>
+  <target name="phpunit">
+    <exec executable="php">
+      <arg value="vendor/phpunit/phpunit/composer/bin/phpunit" />
+    </exec>
+  </target>
+  <target name="phpunit-short">
+    <exec executable="php">
+      <arg value="vendor/phpunit/phpunit/composer/bin/phpunit" />
+      <arg value="--group" />
+      <arg value="short" />
+    </exec>
+  </target>
+  <target name="phpunit-long">
+    <exec executable="php">
+      <arg value="vendor/phpunit/phpunit/composer/bin/phpunit" />
+      <arg value="--group" />
+      <arg value="long" />
+    </exec>
+  </target>
+  <target name="create-artefact">
+    <zip destfile="tmp/build.zip">
+	    <fileset dir=".">
+	      <include name="**/*" />
+	      <exclude name="tmp/*" />
+	    </fileset>
+	  </zip>
+  </target>
+</project>
