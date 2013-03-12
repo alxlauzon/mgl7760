@@ -20,6 +20,6 @@ class ShortTest extends PHPUnit_Framework_TestCase
   public function testAdd()
   {
     sleep(10);
-    $this->assertTrue(fallse);
+    $this->assertTrue(true);
   }
 }
